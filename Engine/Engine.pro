@@ -21,7 +21,7 @@ TARGET = Engine
 TEMPLATE = lib
 CONFIG += staticlib
 CONFIG += moc
-CONFIG += boost boost-serialization-lib qt cairo python shiboken pyside 
+CONFIG += boost boost-serialization-lib egl wayland qt cairo python shiboken pyside
 QT += core network
 greaterThan(QT_MAJOR_VERSION, 4): QT += concurrent
 
@@ -141,6 +141,7 @@ SOURCES += \
     NonKeyParamsSerialization.cpp \
     OSGLContext.cpp \
     OSGLContext_mac.cpp \
+    OSGLContext_wayland.cpp \
     OSGLContext_win.cpp \
     OSGLContext_x11.cpp \
     OfxClipInstance.cpp \
@@ -306,7 +307,9 @@ HEADERS += \
     NonKeyParamsSerialization.h \
     OSGLContext.h \
     OSGLContext_mac.h \
+    OSGLContext_wayland.h \
     OSGLContext_win.h \
+    OSGLContext_xdg.h \
     OSGLContext_x11.h \
     OfxClipInstance.h \
     OfxEffectInstance.h \

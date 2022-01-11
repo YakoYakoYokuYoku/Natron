@@ -25,7 +25,7 @@ TARGET = NatronRenderer
 CONFIG += console
 CONFIG -= app_bundle
 CONFIG += moc
-CONFIG += boost boost-serialization-lib qt cairo python shiboken pyside 
+CONFIG += boost boost-serialization-lib wayland qt cairo python shiboken pyside
 CONFIG += static-engine static-host-support static-breakpadclient static-libmv static-openmvg static-ceres static-libtess
 
 !noexpat: CONFIG += expat

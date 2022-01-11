@@ -451,6 +451,19 @@ unix {
           INCLUDEPATH *= $$PYTHON_INCLUDEPATH
      }
 
+    greaterThan(QT_MAJOR_VERSION, 4) {
+        system(pkg-config --exists egl wayland-client wayland-egl) {
+            CONFIG += wayland
+
+            wayland: PKGCONFIG += wayland-client wayland-egl
+            wayland: DEFINES += __NATRON_WAYLAND__
+        }
+    }
+
+    system(pkg-config --exists egl) {
+        egl: INCLUDEPATH += $$system(pkg-config --variable=includedir egl)
+    }
+
     equals(QT_MAJOR_VERSION, 5) {
         system(pkg-config --exists pyside2) {
             shiboken: PKGCONFIG += shiboken2
